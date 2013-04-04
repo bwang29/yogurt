@@ -1,0 +1,187 @@
+/*I feel some css styles should be shared across options and app page
+*/
+body {
+	background-color: white;
+	color: black;
+	font-family: Verdana;
+}
+.logo {
+	display: block;
+	color: black;
+}
+.sublogo {
+	color: #ddd;
+}
+#yogurt_conf_wrapper .nav_label {
+	padding: 12px;
+	box-sizing: border-box;
+	border-left: 5px solid #999;
+	display: block;
+	margin:10px 0;
+	cursor: pointer;
+	color:#999;
+}
+.wrapper_title{
+	font-size:15px;
+	padding: 10px 0;
+}
+
+.wrapper_subtitle{
+	font-size: 14px;
+	padding: 8px 0;
+}
+
+.panel p{
+	margin: 10px 0;
+}
+
+.panel img{
+	margin: 5px 0;
+}
+
+img.long{
+	width: 700px;
+}
+
+.panel{
+	margin-bottom: 100px;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+span.bullet{
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+
+.red{
+	background-color: #FF2929;
+}
+
+.green{
+	background-color: #62CF6D;
+}
+
+.blue{
+	background-color: #79C7D9;
+}
+
+.yellow{
+	background-color: #F5A503;
+}
+
+.pink{
+	background-color: #FAA69C;
+}
+
+.entires_title{
+	padding:10px 0;
+	height:12px;
+	border-bottom:1px solid #999;
+}
+
+.entires_title li{
+	list-style:none;
+	display:block;
+	margin-left:0;
+}
+
+#website{
+	float:left;
+}
+
+#distraction{
+	float:right;
+	padding-right:27px;
+}
+
+.panel{
+	display: none;
+}
+.color_sub_block{
+	width: 20px;
+	height: 80px;
+	display: inline-block;;
+}
+.color_block{
+	display: inline-block;
+	margin: 20px 10px;
+	border: 2px solid #292929;
+	cursor: pointer;
+}
+.color_block_highlight{
+	box-shadow : 0px 0px 5px 2px #1BA8E0;
+}
+.setting_site_domain{
+	display: inline-block;
+}
+.setting_site_level{
+	display: inline-block;
+	float: right;
+}
+.level_1{
+	background-color: rgb(245, 222, 222);
+	border: 1px dotted #999;
+}
+.level_2{
+	background-color: rgb(231, 134, 134);
+	border: 1px dotted #999;
+}
+.level_3{
+	background-color: rgb(202, 37, 37);
+	border: 1px dotted #999;
+}
+.level{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	margin: 0 8px;
+	cursor: pointer;
+}
+.null{
+	background: none;
+}
+.setting_site_entry{
+	border-bottom: 1px dotted #CCC;
+	padding:6px 0 2px 0 ;
+	margin-top: 2px;
+}
+.remove{
+	font-size:11px;
+	display: inline-block;
+	margin: 0 4px;
+	cursor: pointer;
+	color:#999;
+}
+.remove:hover{
+	color:#333;
+}
+.btn{
+	padding: 7px 4px;
+	color: #292929;
+	background: #efefef;
+	border: 1px solid #CCC;
+	margin: 5px 0;
+	cursor: pointer;
+}
+.btn:hover{
+	background: #dedede;
+}
+#setting_add_site_input{
+	height: 20px;
+	border: none;
+	font-size:14px;
+	width: 90%;
+	background:none;
+	border-bottom: 1px solid #666;
+	outline: none;
+}
+#setting_site_add_input{
+	display: none; 
+}

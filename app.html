@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Yogurt</title>
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="lib/reset.css">
+<link rel="stylesheet" href="lib/text.css">
+<link rel="stylesheet" href="lib/960.css">
+<link rel="stylesheet" href="lib/jquery.mCustomScrollbar.css">
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="lib/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="lib/jquery.svg.min.js"></script>
+<script type="text/javascript" src="lib/jquery.svgdom.js"></script>
+<script type="text/javascript" src="lib/d3.v2.js"></script>
+<script type="text/javascript" src="lib/canvg.js"></script>
+<script type="text/javascript" src="lib/rgbcolor.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</head>
+<body>
+
+		<div class="modal" id="wallpaper_modal">
+			<div class="modal_dismiss"><img src="close.png" width="13px"/></div>
+			<div style="margin:20px;">Choose your desktop resolution and wait for an image to show up in a new tab: 
+			<div style="font-family:arial; display:inline;">
+					<select name="save_image">
+					  <option value="">Select resolution</option>
+					  <option value="1920_1080">1920 x 1080</option>
+					  <option value="1440_900">1440 x 900</option>
+					  <option value="1280_800">1280 x 800</option>
+					  <option value="1280_720">1280 x 720</option>
+					</select>
+					<span id="save_image_loading">loading... <img src="ajax-loader.gif" width="10px"/></span>
+			</div>
+			</div>
+		</div>
+
+<div class="container_12">
+	<div class="header">
+		<div class="logo"> yogurt <span style="font-size:13px; font-style:italic" id="yogurt_overall_stats"></spans></div>
+		<div style="display:inline; font-family:arial; color:white; float:right; margin-top:25px;">
+			<div class="text_btn" id="show_daily_stats_btn">Show Daily Stats </div><div class="text_btn" id="hide_daily_stats_btn">Hide Daily Stats</div><div class="text_btn left_border" id="wallpaper_btn">Save as Wallpaper</div><div class="text_btn left_border" id="show_settings"> Settings</div></div>
+	</div>
+</div>
+<div class="container_12">
+	<div class="grid_12">
+		<div id="loading">
+			<center>
+				<div id="loading_logo">
+					<div style="font-size:90px;font-weight:bold; color:white; font-family:NexaLight"> <span style="color:rgba(255,0,0,0.6)">y</span>ogurt</div>
+				</div>
+				<div id="loading_text">
+					<span class="loading_dot" id="dot_0">.</span>
+					<span class="loading_dot" id="dot_1">.</span>
+					<span class="loading_dot" id="dot_2">.</span>
+					<span class="loading_dot" id="dot_3">.</span>
+					<span class="loading_dot" id="dot_4">.</span>
+				</div>
+			</center>
+		</div>
+		<div id="tab_history"></div>
+	</div>
+	<div class="grid_12">
+		<div id="domain_sum" style="display:none"></div>
+	</div>
+</div>
+<!-- <div id="yogurt_pop" style="position:fixed;z-index:1000;bottom:30px;left:20px;font-family:Arial">
+
+	<div id="yogurt_pop_btn" style="padding:2px 5px; display:inline-block; background:#333; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #333; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #333), color-stop(1, #191919) ); -webkit-border-radius:3px; border-radius:3px; border:1px solid #292929; text-shadow:1px 1px 0px #333; color:#efefef; font-weight:bold; cursor:pointer; font-size:11px; opacity: 0.9;"> 
+		<div id="distraction_level" style="display:inline-block; width:6px; height: 6px; background: #00ff00; margin 4px; -webkit-border-radius:6px; border-radius:6px;"></div>
+		Yogurt 
+	</div>
+</div>
+<div id="yogurt_pop_content" style="position:fixed;z-index:1000;bottom:65px;left:20px;font-family:Arial;display:none; padding:5px 0 ">
+	<div id="yogurt_pop_stats" style="width: 200px; padding:2px 5px; display:inline-block; background:#444; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #666; -webkit-border-radius:3px; border-radius:3px; border:1px solid #292929; text-shadow:1px 1px 0px #333; color:#fff; font-size:11px; opacity: 0.9;">
+		<div class="" style="position:absolute;right:4px;top:10px;cursor:pointer"><img src="close.png" width="12px" id="yogurt_popup_close_btn"/></div>
+		<div class="" style="font-weight:bold; height:19px; font-size:13px;" id="yogurt_domain">loading..</div>
+		<div class="stats_block" style="border-top:1px dotted #777; padding:3px; margin:2px 0 1; clear: both; display:block">
+			<div class="" style="float:left">Total time spent today</div>
+			<div id="yogurt_protect_duration" class="" style="float:right">loading..</div>
+		</div>
+		<div class="stats_block" style="border-top:1px dotted #777; padding:3px; margin:2px 0; clear: both; display:block">
+			<div class="" style="float:left">Visited times today</div>
+			<div id="yogurt_protect_times" class="" style="float:right">loading..</div>
+		</div>
+		<div class="stats_block" style="border-top:1px dotted #777; padding:3px; margin:2px 0; clear: both; display:block">
+			<div class="" style="float:left">Distraction level</div>
+			<div class="" style="float:right" id="yogurt_distraction_level">loading..</div>
+		</div>
+		<div class="stats_block" style="border-top:1px dotted #777; padding:3px; margin:2px 0; clear: both; display:block">
+			<div class="" style="padding:1px 5px; display:block; background:#333; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #dedede) ); -webkit-border-radius:2px; border-radius:2px; border:1px solid #dcdcdc; text-shadow:1px 1px 0px #ffffff; color:#292929; font-weight:bold; font-size:11px; opacity: 0.8; cursor:pointer; text-align:center; margin-top:3px" id="yogurt_open_app">View in yogurt</div>
+		</div>
+	</div>
+</div> -->
+<div>
+
+</div>
+<div id="tooltip">			
+</div>
+
+<div style="height:20px;width:100%"></div>
+<canvas id="canvas" style="display:none"></canvas>
+</body>

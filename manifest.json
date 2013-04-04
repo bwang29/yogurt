@@ -1,0 +1,40 @@
+{
+  "name": "Yogurt",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Yogurt - helping to create a healthier Internet diet",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  
+  "icons": { 
+    "48": "icon_48_48.png", 
+    "128": "icon_128_128.png" },
+
+  "background": {
+    "scripts": [
+      "lib/jquery.min.js",
+      "lib/persistence.js",
+      "lib/persistence.store.sql.js",
+      "lib/persistence.store.websql.js",
+      "util.js",
+      "backend.js",
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["lib/jquery.min.js","util.js","content.js"]
+    },
+    {
+      "matches": ["https://*/*"],
+      "js": ["lib/jquery.min.js","util.js","content.js"]
+    }
+  ],
+  "options_page" : "options.html",
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
+}

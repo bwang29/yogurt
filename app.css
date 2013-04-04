@@ -1,0 +1,271 @@
+/*DO NOT move the location of red block to make it accesisble from javascript!*/
+.red_block{
+	fill:rgba(255,0,0,0.5);
+}
+
+/*DO NOT move the location of tooltip to make it accesisble from javascript!*/
+#tooltip{
+	position: fixed;
+	top:0;
+	left: 0;
+	padding: 8px;
+	font-size:11px;
+	color:#292929;
+	background: rgba(255,255,255,0.9);
+	display: none;
+	/*box-shadow: 2px 2px 30px rgba(0,0,0,0.4);*/
+/*
+	padding:2px 5px; 
+	display:inline-block; 
+	background:#444; 
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #666; 
+	-webkit-border-radius:3px; 
+	border-radius:3px; 
+	border:1px solid #292929; 
+	text-shadow:1px 1px 0px #333;
+	color:#fff; 
+	font-size:11px; 
+	opacity: 0.8;
+	display: none;*/
+
+	-webkit-user-select: none;
+}
+
+#right_panel{
+	-webkit-user-select: none;
+}
+
+@font-face{
+	font-family: NexaLight;
+	src: url('font/Nexa Light.otf');
+}
+
+body{
+	font-family: Arial;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
+	background-attachment:fixed
+}
+
+
+.attention_block_frame{
+	width: 50px;
+	height: auto;
+	padding: 2px;
+	background: #FEFEFE;
+	border-bottom: 1px solid #EEE;
+}
+.group_cursor{
+	display: none;
+	pointer-events:none;
+}
+.group_selection_block{
+	display: none;
+}
+
+.logo{
+	font-weight: bold;
+	font-size:26px;
+	padding: 10px;
+	margin-top: 10px;
+	color: white;
+	font-family: NexaLight;
+	display: inline-block;
+}
+
+.loading_dot{
+	font-size:18px;
+	width: 20px;
+	display: inline-block;
+}
+
+button{
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 5px;
+  color:white;
+}
+
+button:hover{
+  background: rgba(255,255,255,0.4);
+}
+
+.info {
+  color: #00428B;
+  background-color: #BDE5F8;
+  padding: 0.5em;
+}
+.success {
+  color: #3F7A00;
+  background-color: #DFF2BF;
+  padding: 0.5em;
+}
+.warning {
+  color: #8F5000;
+  background-color: #FEEFB3;
+  padding: 0.5em;
+}
+.error {
+  color: #C8000C;
+  background-color: #FFBABA;
+  padding: 0.5em;
+}
+
+#status {
+	margin-bottom: 1em;
+}
+
+.sites a {
+	color: #ff1493;
+}
+
+.tooltip_date{
+	font-weight: bold;
+	margin: 2px;
+	font-size: 18px;
+}
+
+.tooltip_time{
+	font-weight: bold;
+	margin: 2px;
+	font-size: 18px;
+}
+.tooltip_domain{
+	padding:2px; 
+	font-size:12px;
+	font-style: italic;
+}
+.tooltip_stat_content{
+	float: right;
+}
+#tab_domain{
+
+}
+
+.blocks{
+	display: none;
+}
+
+#domain_sum{
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+}
+#tab_history{
+	display: none;
+}
+#loading_text{
+	color: white;
+	font-size: 13px;
+	padding-top:10px;
+}
+#loading_logo{
+	padding-top:150px;
+}
+#loading_text{
+	display: none;
+}
+.group_selection_block{
+	cursor: pointer;
+}
+/* Stats */
+#stats{
+	position: relative;
+	display: none;
+}
+
+.circle_number{
+	font-family: NexaLight;
+	font-size: 16px;
+	stroke-width: 0;
+}
+
+.stats_line{
+	font-size: 11px;
+	stroke-width: 0;
+	font-weight: 300;
+}
+
+.header{
+	display: none;
+	margin-top: 5px;
+}
+
+#save_image_loading{
+	display: none;
+}
+
+.text_btn{
+	color: rgba(255,255,255,0.4);
+	font-weight:normal;
+	font-size:11px;
+	display: inline-block;
+	padding: 2px 5px;
+	margin:4px 0;
+	cursor: pointer;
+	margin:0;
+	font-style: italic;
+	font-family: NexaLight;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.left_border{
+	border-left: 1px dotted rgba(255,255,255,0.3);
+}
+
+.modal{
+	position: fixed;
+	width: 400px;
+	left: 50%;
+	margin-left: -200px; 
+	background: rgba(255,255,255,0.9);
+	margin-top:-100px;
+	top:50%;
+	z-index: 1000;
+	display: none;
+}
+.modal_dismiss{
+	position: absolute;
+	top:6px;
+	right: 6px;
+	border: none;
+	opacity: 0.7;
+	cursor: pointer;
+}
+.modal_dismiss img{
+	-webkit-filter: invert(100%);
+}
+#modal_dismiss:hover{
+	opacity: 1.0;
+}
+.strong{
+	font-weight: bold;
+	font-size: 10px;
+}
+#right_panel_close_btn{
+	cursor: pointer;
+}
+#right_panel_close_btn:hover{
+	opacity: 0.5;
+}
+#right_most_panel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid black;
+}
+.right_panel_domain:hover{
+	cursor: default;
+}
+.stats_block{
+	-webkit-user-select: none;
+	cursor: pointer;
+}
+.panel_show_all_day_text{
+	cursor: pointer;
+	font-style: italic;
+}
+.url_openable{
+	cursor: pointer;
+}

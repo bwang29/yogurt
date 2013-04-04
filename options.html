@@ -1,0 +1,166 @@
+<html>
+<head><title>Yogurt Options</title></head>
+
+<link rel="stylesheet" href="lib/reset.css">
+<link rel="stylesheet" href="lib/text.css">
+<link rel="stylesheet" href="lib/960.css">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="options.css">
+<script src="lib/jquery.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script src="lib/jquery.color.js"></script>
+<script src="lib/persistence.js"></script>
+<script src="lib/persistence.store.sql.js"></script>
+<script src="lib/persistence.store.websql.js"></script>
+<script src="backend.js"></script>
+<script src="util.js"></script>
+<script src="options.js"></script>
+<body>
+	<div id="fb-root" style="display: none"></div>
+	<script src="fbsdk.js"></script>
+	<div id="all_wrapper" class="container_12">
+		<div class="container_12">
+			<div id="title" class="logo">
+			yogurt <span class='sublogo'> configuration</span> 
+			</div>
+		</div>
+		<div id="yogurt_conf_wrapper">
+			<div class="grid_3">
+				<span class="nav_label" id="about_yogurt">About Yogurt</span>
+				<span class="nav_label" id="getting_started">Getting Started</span>
+				<span class="nav_label" id="color_theme">Color Theme</span>
+				<span class="nav_label" id="site_setting">Distraction Domains</span>
+				<div id="status"></div>
+			</div>
+			<div class="grid_9">
+				<div id="color_theme_wrapper" class="panel">
+					<div class="wrapper_title">Theme configuration</div> 
+					Click on one of the color themes below. You need to refresh the Yogurt plugin page to see the effect<br/><br/>
+					<div id="color_theme_choices"></div>
+				</div>
+				<div id="site_setting_wrapper" class="panel">
+					<div class="wrapper_title">Site configuration</div>
+					<div class="entires_title">
+						<ul>
+							<li id="website">Website Name</li>
+							<li id="distraction">Distraction Level</li>
+						</ul>
+					<!-- </div>Site Name</div>
+					<div>Distraction Level</div>
+					<div>Operation</div> -->
+					</div>
+					<div id="site_setting_entires">
+					</div>
+					<div class="btn" id="setting_site_add">
+						<span id="setting_site_add_input_text"></span>
+						<div id="setting_site_add_input">
+							<input type="text" value="" id="setting_add_site_input"></input>
+						</div>
+					</div>
+				</div>
+				<div id="about_yogurt_wrapper" class="panel">
+					<div class="wrapper_title">About Yogurt</div>
+					<p>
+						Yogurt is a Chrome extension that visualizes your online browsing history aiming to raise awareness of online distraction. 
+					</p>
+					<p>
+						Yogurt is <span class="bold">safe</span>: it is 100% local extension, It does not record and share personal information.
+					</p>
+					<p>
+						Yogurt is <span class="bold">non-intrusive</span>:  it does not block any website, it does not pop up annoying notification, it only shows distraction history in a delectable way.
+					</p>
+					<p>
+						Yogurt is <span class="bold">light-weight</span>:  Yogurt is designed to be fast, meaning that it doesn't add overhead to your regular browsing experience and does not slow down your web browser.
+					</p>
+					<p>
+						Yogurt is <span class="bold">simple</span>: it provides the information you care in a clear, easy-understanding way.
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet green"></span>Inspired by DNA art</div>
+					<p>
+						<center><img src="images/typical.png" width="100%"/></center>
+						DNA art is an artistic piece from a person's own DNA. It is a mystery, highly-encrypted self-portrait of the person's genetic makeup, identity, personality and even behavior.
+					</p>
+					<p>
+						Yogurt is inspired by DNA art. Since one's online behavior is a part of himself, which is also unique and personal, It is very interesting to display his online behavior in this similar format. Yogurt can bring user the awareness of online distraction in a modest, friendly way via artistic appearance, and keep the information with the feeling of mystery for personal privacy. 
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet red"></span>How it works</div>
+					<p>
+						In order to detect your online activities, Yogurt tracks attention flows by auditing in-browser events. More specifically, only the attention flow of the current tab you're staying on will be tracked. When you switch to another tab, a new flow will be established while the current one will be closed. When you are working on other programs rather than chrome, the attention flow will be closed and that period will be marked as "Not in browser".
+					</p>
+					<p>
+						Then the data Yogurt has collected will be visualized via SVG using D3.
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet blue"></span>Terms & Privacy</div>
+					<p>
+						Yogurt is a local Chrome extension. All your browsing data is locally stored and can only be accessed by you. Moreover, Yogurt only counts the amount of your in-browser actions (such as clicking, scrolling etc.), it never records or stores the information you type in.
+					</p>
+
+					<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FYogurt%2F459546130759077&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;font=verdana&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=293152694138623" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+
+				</div>
+				<div id="getting_started_wrapper" class="panel">
+					<div class="wrapper_title">Getting Started with Yogurt</div>
+					<p>
+						To start using Yogurt, go to "Distraction Domains" tab, add sites you deem as distractive and set their distraction levels.
+					</p>
+					<p>
+						Then simply keep it enabled in your Chrome. It will track your browsing behavior silently. 
+					</p>
+					<p>
+						When you've been using Yogurt for some time, you can view the visualization of your distraction history by clicking on the Yogurt icon on your Chrome toolbar.
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet red"></span>Interpret the visualization</div>
+					<p>
+						You'll see 7 rows of illuminated stripes <strong>(Note that you might not have enough stripes showing because you don't have lots of browsing histories) </strong>, each row representing one of the past seven days. Every stripe represents a time duration you spent on a particular site. If there's no stripe there, you were not in browser at that time. The wider the stripe is, the longer time you spent. The brighter it is, the higher level of distraction that site is, which can be configured in the settings page. 
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet blue"></span>Interact with the visualization</div>
+					<p>
+						Move your mouse over those stripes, you will see more detailed information.
+					</p>
+					<img src="images/gs1.png"/>
+					<p>
+						If you're curious about exactly what site has consumed so much of your time, clicking on the stripe will bring you to that page in a new tab.
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet yellow"></span>View aggregated statistics</div>
+					<p>
+						You may already notice the numbers beside Yogurt's logo, hover over it you can see its explanation.
+					</p>
+					<img class="long" src="images/gs3.png"/>
+					<p>
+						Curious about how are you doing every day? Click on "Show Daily Stats", you can check out the daily stats on the right.
+					</p>
+					<img src="images/gs2.png"/>
+					<p>
+						The percentage inside the circle is the total distraction time divided by your total in-browser time.
+					</p>
+					<p>
+						What are the sites that took most of your time? A ranked list will tell you. To see it, click on the daily stats block.
+					</p>
+					<img src="images/gs4.png"/>
+					<p>
+						The distraction sites defined in the settings will be highlighted in red.
+					</p>
+					<p>
+						If you click on the link "Show stats for all days" at the bottom, a similar list aggregating the stats of 7 days will be shown. You can toggle back to daily stats by clicking the similar link at the bottom.
+					</p>
+					<img src="images/gs5.png"/>
+					<div class="wrapper_subtitle"><span class="bullet green"></span>Save as wallpaper</div>
+					<p>
+						Love the visualization of your distraction history? Save it as wallpaper! All you need to do is click "Save as Wallpaper" on the upper left and select a resolution.
+					</p>
+					<div class="wrapper_subtitle"><span class="bullet pink"></span>Change color theme</div>
+					<p>
+						You can change your color theme any time in your options. Refresh Yogurt plugin page and there you go!
+					</p>
+					<p>
+						Now, start enjoying Yogurt, a healthier Internet diet!
+					</p>
+				</div>
+			</div>
+			<!--
+				<a id="facebook_share">Share My Image</a></div> 
+			-->
+		</div><!-- yogurt_conf_wrapper -->
+	</div><!-- all_wrapper -->
+</body>
+</html>
