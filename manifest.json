@@ -1,6 +1,6 @@
 {
   "name": "Yogurt",
-  "version": "1.0",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Yogurt - helping to create a healthier Internet diet",
   "browser_action": {
